@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>userInfo.html</title>
-    <script src="/WebContent/js/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <style>
         caption {
             text-align: left;
@@ -21,7 +21,7 @@
         // DB 데이터 화면에 출력
         $(document).ready(function () {
             $.ajax({
-                url: '../getUserListServlet',
+                url: 'getUserListServlet',
                 dataType: 'json',
                 success: function (result) {
                     let table = $('<table id = "tab"/>').attr('border', '1');
