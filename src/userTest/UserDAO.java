@@ -120,6 +120,8 @@ public class UserDAO {
 			
 			cnt = psmt.executeUpdate();
 			
+			System.out.println(cnt + "건 수정");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
