@@ -92,14 +92,7 @@
             });
 
         });
-
-        // reset 기능
-        function inputReset() {
-
-        }
         
-        
-
         // 수정 버튼 클릭
         function ModifyUser(index) {
         	console.log($("#userID"+index).val());
@@ -111,6 +104,7 @@
 				"gender": $("#gender"+index).val()
 			};
 			console.log(data);
+			
             // 서버와 통신하려면 name이들어가야돼
             
             $.ajax({
