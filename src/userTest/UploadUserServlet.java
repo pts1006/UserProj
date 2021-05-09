@@ -36,7 +36,7 @@ public class UploadUserServlet extends HttpServlet {
 		
 		int userInsertResultCount = dao.getInsert(vo);
 		
-		System.out.print("upload insert query result : "+ userInsertResultCount);
+		System.out.println("insert query result : "+ userInsertResultCount);
 		
 		response.sendRedirect("/UserProj/userInfo.html");
 	}
