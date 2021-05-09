@@ -1,9 +1,13 @@
 package userTest;
 
 public class UserVO {
-
-	private String userID, name, userPass, phone, gender;
-
+	
+	private String userID; 
+	private String name;
+	private String userPass;
+	private String phone;
+	private String gender;
+	
 	public String getUserID() {
 		return userID;
 	}
@@ -43,5 +47,4 @@ public class UserVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
 }

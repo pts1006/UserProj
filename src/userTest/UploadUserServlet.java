@@ -20,10 +20,25 @@ public class UploadUserServlet extends HttpServlet {
 
 		response.setCharacterEncoding("UTF-8");
 		
+		String userId = request.getParameter("userID");
+		String name = request.getParameter("name");
+		String userPass = request.getParameter("userPass");
+		String phone = request.getParameter("phone");
+		String gender = request.getParameter("gender");
+		
 		UserDAO dao = new UserDAO();
 		UserVO vo = new UserVO();
+		vo.setUserID(userId);
+		vo.setName(name);
+		vo.setUserPass(userPass);
+		vo.setPhone(phone);
+		vo.setGender(gender);
 		
-		UserVO vo2 = dao.getInsert(vo);
+		int userInsertResultCount = dao.getInsert(vo);
+		
+		System.out.print("upload insert query result : "+ userInsertResultCount);
+		
+		response.sendRedirect("/UserProj/userInfo.html");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
