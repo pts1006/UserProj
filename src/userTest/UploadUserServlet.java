@@ -26,7 +26,6 @@ public class UploadUserServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String gender = request.getParameter("gender");
 		
-		UserDAO dao = new UserDAO();
 		UserVO vo = new UserVO();
 		vo.setUserID(userId);
 		vo.setName(name);
@@ -34,7 +33,10 @@ public class UploadUserServlet extends HttpServlet {
 		vo.setPhone(phone);
 		vo.setGender(gender);
 		
-		int userInsertResultCount = dao.getInsert(vo);
+		System.out.println("서블릿 신규 사용자 요청 데이터 확인 : "+ vo.toString());
+
+		UserDAO dao = new UserDAO();
+		int userInsertResultCount = dao.userInsert(vo);
 		
 		System.out.println("insert query result : "+ userInsertResultCount);
 		

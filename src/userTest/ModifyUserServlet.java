@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 
 
 @WebServlet("/modifyUserServlet")
@@ -27,6 +29,29 @@ public class ModifyUserServlet extends HttpServlet {
 		
 		response.setCharacterEncoding("UTF-8");
 		
+		UserVO vo = new UserVO();
+		
+		String userId = request.getParameter("userID");
+		String name = request.getParameter("name");
+		String userPass = request.getParameter("userPass");
+		String phone = request.getParameter("phone");
+		String gender = request.getParameter("gender");
+		
+		vo.setUserID(userId);
+		vo.setName(name);
+		vo.setUserPass(userPass);
+		vo.setPhone(phone);
+		vo.setGender(gender);
+		
+		System.out.println(vo.toString());
+
+		UserDAO dao = new UserDAO();
+		int userUpdateResultCount = dao.updateUser(vo);
+				
+		System.out.println("update query result : "+ userUpdateResultCount);
+		response.getWriter().print(userUpdateResultCount);
+		
+		response.sendRedirect("/UserProj/userInfo.html");
 		
 	}
 

@@ -47,4 +47,11 @@ public class UserVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+	@Override
+	public String toString() {
+		return "UserVO [userID=" + userID + ", name=" + name + ", userPass=" + userPass + ", phone=" + phone
+				+ ", gender=" + gender + "]";
+	}
+	
 }
