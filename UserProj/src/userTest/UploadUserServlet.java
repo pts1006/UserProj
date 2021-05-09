@@ -21,8 +21,9 @@ public class UploadUserServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		UserDAO dao = new UserDAO();
+		UserVO vo = new UserVO();
 		
-		UserVO vo = dao.getInsert(null);
+		UserVO vo2 = dao.getInsert(vo);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
