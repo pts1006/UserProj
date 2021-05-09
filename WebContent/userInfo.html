@@ -29,6 +29,7 @@
                 	
                 	const table = $('<table id = "tab"/>').attr('border', '1');
                     table.append(getTitle());
+                    
                     for (let i = 0; i < result.length; i++) {
                     	
                     	let $tr = $('<tr />');
@@ -36,7 +37,7 @@
                         let modifyBtn = $('<button onclick="ModifyUser('+i+');" />').html('수정');
                         
                         $tr.append(
-                            $('<td />').append($('<input type = "text" disabled id ="userID'+i+'" >').val(result[i].userID)),
+                            $('<td />').append($('<input type = "text" disabled id ="userID'+i+'">').val(result[i].userID)),
                             $('<td />').append($('<input type = "text" id ="name'+i+'">').val(result[i].name)),
                             $('<td />').append($('<input type = "text" id ="userPass'+i+'">').val(result[i].userPass)),
                             $('<td />').append($('<input type = "text" id ="phone'+i+'">').val(result[i].phone)),
