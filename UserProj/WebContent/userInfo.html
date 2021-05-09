@@ -21,7 +21,7 @@
         // DB 데이터 화면에 출력
         $(document).ready(function () {
             $.ajax({
-                url: 'getUserListServlet',
+                url: '../getUserListServlet',
                 dataType: 'json',
                 success: function (result) {
                     let table = $('<table id = "tab"/>').attr('border', '1');
@@ -37,8 +37,9 @@
                         $tr.append(
                             $('<td />').html(obj.userID),
                             $('<td />').html(obj.name),
-                            $('<td />').html(obj.fileName),
+                            $('<td />').html(obj.userPass),
                             $('<td />').html(obj.phone),
+                            $('<th />').html(obj.gender),
                             $('<td />').html(modifyBtn)
                         );
                         table.append($tr);
@@ -58,6 +59,7 @@
                 $title.append(
                     $('<th />').html('회원번호'),
                     $('<th />').html('이름'),
+                    $('<th />').html('비밀번호'),
                     $('<th />').html('연락처'),
                     $('<th />').html('성별'),
                     $('<th />').html('기능')
