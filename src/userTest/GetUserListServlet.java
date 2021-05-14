@@ -20,6 +20,7 @@ public class GetUserListServlet extends HttpServlet {
 		super();
 	}
 
+	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
