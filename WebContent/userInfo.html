@@ -69,30 +69,6 @@
             );
             return $title;
         };
-
-        // submit 기능
-        $('#frm').submit(function (e) {
-            e.preventDefault();
-            let frm = document.getElementById('frm');
-            let data = new FormData(frm);
-
-            $.ajax({
-                contentType: false,
-                processData: false,
-                url: $('#frm').attr('action'),
-                type: 'post',
-                dataType: 'json',
-                data: data,
-                success: function (result) {
-                    window.alert('생성됨.')
-                },
-                error: function (err) {
-                    console.log(err);
-                    window.alert('안 됨.')
-                }
-            });
-
-        });
         
         // 수정 버튼 클릭
         function ModifyUser(index) {
